@@ -9,7 +9,7 @@
 -- 
 -- Happy MapReducing!
 
-module MapReduce (mrMain, Map, Reduce, key, value) where
+module Hadoop.MapReduce (mrMain, Map, Reduce, key, value) where
 
 import System (getArgs)
 import Data.List (groupBy)

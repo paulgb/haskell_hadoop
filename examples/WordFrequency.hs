@@ -6,7 +6,7 @@
 
 module WordFrequency where
 
-import MapReduce (mrMain, Map, Reduce)
+import Hadoop.MapReduce (mrMain, Map, Reduce)
 
 wfMap :: Map
 wfMap = words

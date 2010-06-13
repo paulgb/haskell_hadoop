@@ -8,7 +8,7 @@
 
 module ReverseDirectedGraph where
 
-import MapReduce (mrMain, Map, Reduce, key, value)
+import Hadoop.MapReduce (mrMain, Map, Reduce, key, value)
 
 wfMap :: Map
 wfMap line =

@@ -2,7 +2,7 @@
 
 module Prefices where
 
-import MapReduce (mrMain, Map, Reduce, key, value, dummyReduce)
+import Hadoop.MapReduce (mrMain, Map, Reduce, key, value)
 import Data.List (inits, sort, nub)
 
 pMap :: Map
