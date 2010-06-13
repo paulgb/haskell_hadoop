@@ -4,7 +4,7 @@
 -- Outputs, with one line per word, each word followed by
 -- the number of times it occurs.
 
-module WordFrequency where
+module Main where
 
 import Hadoop.MapReduce (mrMain, Map, Reduce)
 

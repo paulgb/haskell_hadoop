@@ -7,6 +7,10 @@ build-type:     Simple
 Synopsis:       Examples for the Hadoop.MapReduce library
 Cabal-Version:  >= 1.2
 
+Executable altwf
+    build-depends:  base, haskell98, mapreduce
+    Main-is: AltWordFrequency.hs
+
 Executable prefices
     build-depends:  base, haskell98, mapreduce
     Main-is: Prefices.hs

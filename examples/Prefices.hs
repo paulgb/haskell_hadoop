@@ -1,6 +1,6 @@
 
 
-module Prefices where
+module Main where
 
 import Hadoop.MapReduce (mrMain, Map, Reduce, key, value)
 import Data.List (inits, sort, nub)

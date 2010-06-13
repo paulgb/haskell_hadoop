@@ -9,6 +9,7 @@
 -- 
 -- Happy MapReducing!
 
+
 module Hadoop.MapReduce (mrMain, Map, Reduce, key, value) where
 
 import System (getArgs)

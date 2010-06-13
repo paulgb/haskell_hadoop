@@ -6,7 +6,7 @@
 -- is followed by the names of adjacent nodes, separated by
 -- spaces. The output graph is in the same format.
 
-module ReverseDirectedGraph where
+module Main where
 
 import Hadoop.MapReduce (mrMain, Map, Reduce, key, value)
 
