@@ -9,7 +9,7 @@
 -- 
 -- Happy MapReducing!
 
-module MapReduce (mrMain, Map, Reduce, dummyMap, dummyReduce) where
+module MapReduce (mrMain, Map, Reduce, dummyMap, dummyReduce, key, value) where
 
 import System (getArgs)
 import Data.List (groupBy)
