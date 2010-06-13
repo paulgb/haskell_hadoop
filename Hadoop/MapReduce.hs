@@ -5,7 +5,7 @@
 -- You may use this module under the zlib/libpng license.
 -- (http://www.opensource.org/licenses/zlib-license.php)
 --
--- See README, LICENSE, and /examples for more information.
+-- See README.md, LICENSE, and /examples for more information.
 -- 
 -- Happy MapReducing!
 
