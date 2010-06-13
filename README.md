@@ -1,7 +1,7 @@
 
 # Haskell-Hadoop
 
-Note: this is an early draft of the README. It still needs work!
+*Note: this is an early draft of the README. It still needs work!*
 
 Haskell-Hadoop is a simple Haskell interface to Hadoop Streaming jobs.
 
