@@ -9,7 +9,7 @@
 -- 
 -- Happy MapReducing!
 
-module MapReduce (mrMain, Map, Reduce, dummyMap, dummyReduce, key, value) where
+module MapReduce (mrMain, Map, Reduce, key, value) where
 
 import System (getArgs)
 import Data.List (groupBy)
@@ -36,22 +36,7 @@ usage_message =
     "Notice: This is a streaming MapReduce program.\n" ++
     "It must be called with one of the following arguments:\n" ++
     "    -m     Run the Map portion of the MapReduce job\n" ++
-    "    -r     Run the Reduce portion of the MapReduce job\n" ++
-    "    -i     Identity function. Use as a mapper when only\n" ++
-    "           reduce functionality is needed, and as a reducer\n" ++
-    "           when only map functionality is needed."
-
--- Dummy Map function, for when you only need reduce
--- functionality (use the "-i" command-line option instead
--- of "-m")
-dummyMap :: Map
-dummyMap = const []
-
--- Dummy Reduce function, for when you only need reduce
--- functionality (use the "-i" command-line option instead
--- of "-r")
-dummyReduce :: Reduce
-dummyReduce = const . const []
+    "    -r     Run the Reduce portion of the MapReduce job\n"
 
 -- For the reduce step, each line consists of a key and
 -- (optionally) a value. The function `key` extracts
@@ -89,6 +74,23 @@ mrMain mrMap mrReduce = do
     case args of
         ["-m"] -> interact (mapper mrMap)
         ["-r"] -> interact (reducer mrReduce)
-        ["-i"] -> interact id
+        _ -> putStrLn usage_message
+
+-- Main function for a map-only job
+mapMain :: Map -> IO ()
+mapMain mrMap = do
+    args <- getArgs
+    case args of
+        ["-m"] -> interact (mapper mrMap)
+        ["-r"] -> interact id
+        _ -> putStrLn usage_message
+
+-- Main function for a reduce-only job
+reduceMain :: Reduce -> IO ()
+reduceMain mrReduce = do
+    args <- getArgs
+    case args of
+        ["-m"] -> interact id
+        ["-r"] -> interact (reducer mrReduce)
         _ -> putStrLn usage_message
 
