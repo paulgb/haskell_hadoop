@@ -1,14 +1,14 @@
 Name:           mapreduce
-Version:        0.1
+Version:        0.2
 License-file:   LICENSE
 Author:         Paul Butler <paulgb@gmail.com>
 Maintainer:     Paul Butler <paulgb@gmail.com>
-build-depends:  base, haskell98
+build-depends:  base
 build-type:     Simple
 Synopsis:       Hadoop Streaming interface for Haskell
 Cabal-Version:  >= 1.2
 
 Library
-    build-depends:  base, haskell98
+    build-depends:  base
     Exposed-Modules: Hadoop.MapReduce
 

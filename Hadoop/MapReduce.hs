@@ -12,7 +12,7 @@
 
 module Hadoop.MapReduce (mrMain, Map, Reduce, key, value) where
 
-import System (getArgs)
+import System.Environment (getArgs)
 import Data.List (groupBy)
 
 -- Map and Reduce corrispond to the type signatures required
