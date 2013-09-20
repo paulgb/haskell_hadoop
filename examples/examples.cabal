@@ -1,5 +1,5 @@
 Name:           mapreduce-examples
-Version:        0.1
+Version:        0.2
 License-file:   LICENSE
 Author:         Paul Butler <paulgb@gmail.com>
 Maintainer:     Paul Butler <paulgb@gmail.com>
@@ -8,18 +8,18 @@ Synopsis:       Examples for the Hadoop.MapReduce library
 Cabal-Version:  >= 1.2
 
 Executable altwf
-    build-depends:  base, haskell98, mapreduce
+    build-depends:  base, mapreduce
     Main-is: AltWordFrequency.hs
 
 Executable prefices
-    build-depends:  base, haskell98, mapreduce
+    build-depends:  base, mapreduce
     Main-is: Prefices.hs
 
 Executable wordfreq
-    build-depends:  base, haskell98, mapreduce
+    build-depends:  base, mapreduce
     Main-is: WordFrequency.hs
 
 Executable reversegraph
-    build-depends:  base, haskell98, mapreduce
+    build-depends:  base, mapreduce
     Main-is: ReverseDirectedGraph.hs
 
