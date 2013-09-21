@@ -1,0 +1,10 @@
+0.2		September 21, 2013
+
+- changed field separator to tab instead of space (issue #1)
+- allow additional arguments after -m or -r (issue #1)
+- fix for recent GHCs (issue #2; contributed by lucasdicioccio)
+
+0.1 	June 13, 2010
+
+Initial release
+

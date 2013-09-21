@@ -27,11 +27,9 @@ type Reduce = String -> [String] -> [String]
 -- by the haskell `interact` function.
 type Interactor = String -> String
 
--- Field separator. Hadoop uses the space character (' ')
--- by default, but comma (',') and tab ('\t') are also
--- common. Ideally there should be a way to change the
--- separator without modifying the source.
-separator = ' '
+-- Field separator. Hadoop uses the tab character ('\t')
+-- by default.
+separator = '\t'
 
 usage_message =
     "Notice: This is a streaming MapReduce program.\n" ++
@@ -73,8 +71,8 @@ mrMain :: Map -> Reduce -> IO ()
 mrMain mrMap mrReduce = do
     args <- getArgs
     case args of
-        ["-m"] -> interact (mapper mrMap)
-        ["-r"] -> interact (reducer mrReduce)
+        "-m" : _ -> interact (mapper mrMap)
+        "-r" : _ -> interact (reducer mrReduce)
         _ -> putStrLn usage_message
 
 -- Main function for a map-only job
@@ -82,8 +80,8 @@ mapMain :: Map -> IO ()
 mapMain mrMap = do
     args <- getArgs
     case args of
-        ["-m"] -> interact (mapper mrMap)
-        ["-r"] -> interact id
+        "-m" : _ -> interact (mapper mrMap)
+        "-r" : _ -> interact id
         _ -> putStrLn usage_message
 
 -- Main function for a reduce-only job
@@ -91,7 +89,7 @@ reduceMain :: Reduce -> IO ()
 reduceMain mrReduce = do
     args <- getArgs
     case args of
-        ["-m"] -> interact id
-        ["-r"] -> interact (reducer mrReduce)
+        "-m" : _ -> interact id
+        "-r" : _ -> interact (reducer mrReduce)
         _ -> putStrLn usage_message
 
