@@ -1,7 +1,4 @@
-
 # Haskell-Hadoop
-
-**Note: this is an early draft of the README. It still needs work!**
 
 Haskell-Hadoop is a simple Haskell interface to Hadoop Streaming jobs.
 
@@ -31,7 +28,7 @@ programmer to parse input from the strings and convert output to strings.
 The first stage of the MapReduce job is map. The map function takes a
 single record and returns zero or more strings as output. These strings
 become records for the reduce job and may be key-value pairs separated
-by a space.
+by the tab character.
 
 #### Example
 
@@ -69,7 +66,7 @@ respectively.
 
 ## Notes
 
-Haskell-Hadoop assumes that the space character (' ') is used to separate
+Haskell-Hadoop assumes that the tab character (\t) is used to separate
 keys and values, and that the newline character is used to separate
 records. These are the same defaults used by Hadoop Streaming.
 
